@@ -15,19 +15,42 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
     
     let quiz = [
-        "Four + Two is equal to Six",
-        "Five - Three is greater than One",
-        "Three + Eight is less than Ten"
+        Question(q: "Four + Two is equal to Six", a: "True"),
+        Question(q: "Five - Three is greater than One", a: "True"),
+        Question(q: "Three + Eight is less than Ten", a: "False")
     ]
+    
+    var questionNumber = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = quiz[0]
+        updateQuestionLabel()
     }
 
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         
+        let userAnswer = sender.titleLabel?.text
+        let actualAnswer = quiz[questionNumber].answer
+        
+        
+        if questionNumber < quiz.count - 1 {
+            questionNumber += 1
+            updateQuestionLabel()
+        } else {
+            questionNumber = 0
+            updateQuestionLabel()
+        }
+        
+        if userAnswer == actualAnswer {
+            print("True") //Correct answer
+        } else {
+            print("False") //Incorrect answer
+        }
+    }
+    
+    func updateQuestionLabel() {
+        questionLabel.text = quiz[questionNumber].text
     }
     
 
