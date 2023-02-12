@@ -1,21 +1,13 @@
 //
-//  ViewController.swift
+//  QuizBrain.swift
 //  QuizApp
 //
-//  Created by Andrey on 08.02.2023.
+//  Created by Andrey on 12.02.2023.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
-    
-    var timer = Timer()
-    
+struct QuizBrain {
     let quiz = [
         Question(q: "A slug's blood is green.", a: "True"),
         Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
@@ -33,44 +25,27 @@ class ViewController: UIViewController {
     
     var questionNumber = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updateUI()
+    func checkAnswer(_ userAnswer: String) -> Bool {
+        if userAnswer == quiz[questionNumber].answer {
+            return true
+        } else {
+            return false
+        }
     }
     
+    func getQuestionText() -> String {
+        return quiz[questionNumber].text
+    }
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        let userAnswer = sender.titleLabel?.text
-        let actualAnswer = quiz[questionNumber].answer
-        timer.invalidate()
-        
-        
-        
-        if userAnswer == actualAnswer {
-            sender.backgroundColor = .green
-        } else {
-            sender.backgroundColor = .red
-        }
-        
+    func getProgress() -> Float {
+        return Float(questionNumber)/Float(quiz.count)
+    }
+    
+    mutating func updateQuestion() {
         if questionNumber < quiz.count - 1 {
             questionNumber += 1
         } else {
             questionNumber = 0
         }
-        
-        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
-    
-    @objc func updateUI() {
-        progressBar.progress = Float(questionNumber + 1)/Float(quiz.count)
-        print(progressBar.progress)
-        questionLabel.text = quiz[questionNumber].text
-        trueButton.backgroundColor = .clear
-        falseButton.backgroundColor = .clear
-        timer.invalidate()
-    }
-    
-    
 }
-
