@@ -22,8 +22,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Ea-cs-QtG">
                                 <rect key="frame" x="16" y="59" width="361" height="759"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYt-Ig-2Dr">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="97.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RM-3u-BdX" userLabel="Question">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="564"/>
+                                        <rect key="frame" x="0.0" y="107.33333333333334" width="361" height="456.66666666666663"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -64,6 +70,10 @@
                                         </constraints>
                                     </progressView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="lYt-Ig-2Dr" firstAttribute="top" secondItem="5Ea-cs-QtG" secondAttribute="top" id="mLM-I2-vjV"/>
+                                    <constraint firstItem="lYt-Ig-2Dr" firstAttribute="leading" secondItem="5Ea-cs-QtG" secondAttribute="leading" id="q20-x6-Q3p"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -83,6 +93,7 @@
                         <outlet property="falseButton" destination="Env-j9-1tN" id="h5J-f6-tpZ"/>
                         <outlet property="progressBar" destination="7Cg-xF-GnT" id="wEH-LU-OSV"/>
                         <outlet property="questionLabel" destination="2RM-3u-BdX" id="tCA-7Y-dJm"/>
+                        <outlet property="scoreLabel" destination="lYt-Ig-2Dr" id="QNp-rm-Uxb"/>
                         <outlet property="trueButton" destination="B5M-5S-wCy" id="uPA-Zu-YP3"/>
                     </connections>
                 </viewController>

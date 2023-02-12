@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        scoreLabel.text = "Score: 0"
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -29,8 +31,10 @@ class ViewController: UIViewController {
         
         if userIsRight {
             sender.backgroundColor = .green
+            scoreLabel.text = "Score: \(quizBrain.scoreNumber)"
         } else {
             sender.backgroundColor = .red
+            scoreLabel.text = "Score: \(quizBrain.scoreNumber)"
         }
         
         timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
