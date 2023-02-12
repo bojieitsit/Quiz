@@ -34,7 +34,10 @@
                                             <constraint firstAttribute="height" constant="80" id="gJn-SZ-wh4"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="True"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="True">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eeX-Gm-ZGc"/>
                                         </connections>
@@ -45,13 +48,17 @@
                                             <constraint firstAttribute="height" constant="80" id="OzP-rq-AlC"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="False"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="False">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UOl-nT-FhG"/>
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Cg-xF-GnT">
                                         <rect key="frame" x="0.0" y="754" width="361" height="6"/>
+                                        <color key="tintColor" red="1" green="0.64674299030643834" blue="0.62324519510891596" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="Y7v-Ds-8Ay"/>
                                         </constraints>
