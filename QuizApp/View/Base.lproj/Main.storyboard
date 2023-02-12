@@ -23,43 +23,57 @@
                                 <rect key="frame" x="16" y="59" width="361" height="759"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYt-Ig-2Dr">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="97.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="76"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RM-3u-BdX" userLabel="Question">
-                                        <rect key="frame" x="0.0" y="107.33333333333334" width="361" height="456.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="86" width="361" height="388"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5M-5S-wCy" userLabel="True">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsV-PP-0A7">
+                                        <rect key="frame" x="0.0" y="484" width="361" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="KFf-LN-15G"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Choice 1">
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mGm-ph-SFb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5M-5S-wCy" userLabel="Choice2 Button">
                                         <rect key="frame" x="0.0" y="574" width="361" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="gJn-SZ-wh4"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="True">
+                                        <buttonConfiguration key="configuration" style="tinted" title="Choice 2">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eeX-Gm-ZGc"/>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZZU-Wr-Wne"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Env-j9-1tN" userLabel="False">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Env-j9-1tN" userLabel="Choice3 Button">
                                         <rect key="frame" x="0.0" y="664" width="361" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="OzP-rq-AlC"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="False">
+                                        <buttonConfiguration key="configuration" style="tinted" title="Choice 3">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UOl-nT-FhG"/>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sMU-4U-8gc"/>
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Cg-xF-GnT">
@@ -90,11 +104,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="falseButton" destination="Env-j9-1tN" id="h5J-f6-tpZ"/>
+                        <outlet property="choice1Button" destination="HsV-PP-0A7" id="Bvz-Z6-a4X"/>
+                        <outlet property="choice2Button" destination="B5M-5S-wCy" id="VdJ-Nz-MWi"/>
+                        <outlet property="choice3Button" destination="Env-j9-1tN" id="AfJ-Gu-JO2"/>
                         <outlet property="progressBar" destination="7Cg-xF-GnT" id="wEH-LU-OSV"/>
                         <outlet property="questionLabel" destination="2RM-3u-BdX" id="tCA-7Y-dJm"/>
                         <outlet property="scoreLabel" destination="lYt-Ig-2Dr" id="QNp-rm-Uxb"/>
-                        <outlet property="trueButton" destination="B5M-5S-wCy" id="uPA-Zu-YP3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
